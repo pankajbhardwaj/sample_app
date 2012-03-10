@@ -38,8 +38,8 @@ describe SessionsController do
         post :create, :session => @attr
         flash.now[:error].should =~ /invalid/i
       end
-
-  describe "with valid email and password" do
+   end
+   describe "with valid email and password" do
 
       before(:each) do
         @user = Factory(:user)
@@ -56,7 +56,6 @@ describe SessionsController do
         post :create, :session => @attr
         response.should redirect_to(user_path(@user))
       end
-    end
    end
  end
 
